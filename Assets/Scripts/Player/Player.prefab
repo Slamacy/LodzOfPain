@@ -65,6 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0076861afd13648a7d2e9224a490c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHP: 0
+  HitRanger: {fileID: 1983023946136884, guid: 360a57c3ee511764faddb3f38e718530, type: 2}
 --- !u!212 &212720478321795614
 SpriteRenderer:
   m_ObjectHideFlags: 1
