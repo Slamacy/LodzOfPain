@@ -19,12 +19,6 @@ public class HitRangerController : MonoBehaviour {
         // Get the player controller
         playerController = player.GetComponent<PlayerController>();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     // As enemies enter range, list them for the correct side
     private void OnTriggerEnter(Collider other)
@@ -46,13 +40,35 @@ public class HitRangerController : MonoBehaviour {
     // Hits the clossest enemy on the chosen side
     public void HitEnemy(bool hitLeft)
     {
+        // Check for super power
+        if (playerController.powerUp)
+        {
+            // Get controller of players hit ranger
+            PowerController powerController = playerController.powerUp.GetComponent<PowerController>();
+            powerController.UsePower(hitLeft);
+            playerController.powerUp = null;
+            return;
+        }
+        // Get correct enemies
+        List<GameObject> list = right;
         if (hitLeft)
         {
-
+            list = left;
         }
-        else
+        // If no enemy leave function
+        if (list.Count == 0)
         {
+            return;
+        }
+        GameObject enemy = list[0];
 
+        // Get controller of enemy
+        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+        enemyController.GetHit();
+        // Hit player and  remove if hp is zero
+        if (enemyController.currentHP <= 0)
+        {
+            list.Remove(enemy);
         }
     }
 

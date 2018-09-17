@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour {
 
     public int startingHP;
     public GameObject hitRanger;    //  Indicates the range of the players strikes
+    public PowerController powerUp;      // Special attack
+
+
     private HitRangerController rangerController;
 
     private int currentHP;
@@ -18,15 +21,8 @@ public class PlayerController : MonoBehaviour {
 
         // Get controller of players hit ranger
         rangerController = hitRanger.GetComponent<HitRangerController>();
+        powerUp = null;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (currentHP <= 0)
-        {
-            EndGame();
-        }
-	}
 
     // Call when hp is zero or player chooses to quit the game
     private void EndGame()
@@ -37,5 +33,9 @@ public class PlayerController : MonoBehaviour {
     public void GetHit()
     {
         currentHP -= 1;
+        if (currentHP <= 0)
+        {
+            EndGame();
+        }
     }
 }
