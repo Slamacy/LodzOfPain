@@ -16,8 +16,9 @@ public class HitRangerController : MonoBehaviour {
     private Animator anim;
     private Animator healthAnimator;
 
-    public int score = 0;
-    private int multi;
+    public long score = 0;
+    private long multi = 1;
+    private long multi2 = 1;
 
     // Use this for initialization
     void Start ()
@@ -82,6 +83,7 @@ public class HitRangerController : MonoBehaviour {
         if (list.Count == 0)
         {
             multi = 1;
+            multi2 = 1;
             return;
         }
         GameObject enemy = list[0];
@@ -96,22 +98,19 @@ public class HitRangerController : MonoBehaviour {
         // Hit enemy and  remove if hp is zero
         if (enemyController.currentHP <= 0)
         {
-            int temp = multi;
-            multi = score;
-            score += temp;
+            score += multi + multi2;
+            long temp = multi + multi2;
+            multi = multi2;
+            multi2 = temp;
             list.Remove(enemy);
             scoreText.text = score.ToString();
-               
-            if (multi == 0)
-            {
-                multi = 1;
-            }
         }
     }
 
     public void HitPlayer(EnemyController enemy)
     {
         multi = 1;
+        multi2 = 1;
 
         playerController.GetHit();
 
