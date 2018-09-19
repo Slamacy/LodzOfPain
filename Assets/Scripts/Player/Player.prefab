@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212720478321795614}
   - component: {fileID: 114419202141312876}
   - component: {fileID: 65126091579758430}
+  - component: {fileID: 95220683497995220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -54,6 +55,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95220683497995220
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144671879216522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 537fb99670c6bfd4abc258a4d7d00370, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114419202141312876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,7 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 0
-  HitRanger: {fileID: 1983023946136884, guid: 360a57c3ee511764faddb3f38e718530, type: 2}
+  hitRanger: {fileID: 0}
+  powerUp: {fileID: 0}
+  endScreen: {fileID: 1528951883484598, guid: 6d0c67e6424289e4c956264802c17ab5, type: 2}
 --- !u!212 &212720478321795614
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,6 +131,6 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

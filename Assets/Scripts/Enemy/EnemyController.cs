@@ -9,9 +9,13 @@ public class EnemyController : MonoBehaviour {
     public int startingHP;
     public int currentHP;
 
+    public GameObject[] explosions;
+
     private GameObject hitRanger;
     private bool isDone;
-    private Renderer rend;
+    private Renderer[] rend;
+    private Animator anim;
+
 
     // Use this for initialization
     void Start()
@@ -22,7 +26,8 @@ public class EnemyController : MonoBehaviour {
         }
         isDone = false;
         currentHP = startingHP;
-        rend = GetComponent<Renderer>();
+        rend = gameObject.GetComponentsInChildren<Renderer>();
+        anim = gameObject.GetComponentsInChildren<Animator>()[0];
     }
 	
 	// Update is called once per frame
@@ -42,22 +47,37 @@ public class EnemyController : MonoBehaviour {
         if(currentHP <= 0 || isDone)
         {
             // When out of screen destroy this object
-            if (!rend.isVisible)
+            if (!IsVisible())
             {
                 Destroy(gameObject);
             }
         }
     }
 
+
+    private bool IsVisible()
+    {
+        foreach (Renderer renderer in rend)
+        {
+            if (renderer.isVisible)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (hitRanger)
+            if (hitRanger && !isDone)
             {
                 // Get controller and hit player
                 HitRangerController hitController = hitRanger.GetComponent<HitRangerController>();
                 hitController.HitPlayer(this);
+                // Show explosion on hit
+                Instantiate(explosions[Random.Range(0, explosions.Length - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.01f), transform.rotation);
                 isDone = true;
             }
         }
@@ -65,18 +85,27 @@ public class EnemyController : MonoBehaviour {
         {
             // Grab the reference of hit ranger to be able to hit the player
             hitRanger = other.gameObject;
-
-            // Debug.Log("Start punching animation");
+            // Switch to punching animation
+            anim.SetTrigger("Punch");
         }
     }
 
     public void GetHit()
     {
         currentHP -= 1;
-
+        // Explode
+        Instantiate(explosions[Random.Range(0, explosions.Length - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.01f), transform.rotation);
+        // Get hit back
         Rigidbody rb;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(2f, 0f, 0f, ForceMode.Impulse);
+
+        float hitForce = 3f;
+        if(speed > 0)
+        {
+            hitForce *= -1;
+        }
+
+        rb.AddForce(hitForce, 0f, 0f, ForceMode.Impulse);
 
         if (currentHP <= 0)
         {
@@ -92,7 +121,7 @@ public class EnemyController : MonoBehaviour {
 
         float forceX = 3f + Random.Range(0f, 2f);
         float forceY = 7f + Random.Range(0f, 2f);
-        float forceZ = -1f;
+        float forceZ = 0f;
 
         if(speed > 0)
         {

@@ -9,19 +9,4 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/Gameplay");
     }
-
-    public void LeaderBoard()
-    {
-
-    }
-
-    public void HowToPlay()
-    {
-
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
 }

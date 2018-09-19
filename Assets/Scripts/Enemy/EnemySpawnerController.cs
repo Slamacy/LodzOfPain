@@ -23,7 +23,7 @@ public class EnemySpawnerController : MonoBehaviour {
     void Start()
     {
         // Call the Spawn function after a delay of the spawnTime
-        Invoke("Spawn", spawnTime - Random.Range(0f, spawnTimeChange));
+        Invoke("Spawn", 2 + Random.Range(0f, 0.5f));
     }
 
 

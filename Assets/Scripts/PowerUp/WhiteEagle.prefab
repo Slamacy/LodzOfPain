@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4115326200924686}
   - component: {fileID: 212928254220152962}
-  - component: {fileID: 54911046312738588}
-  - component: {fileID: 65938494085524006}
-  - component: {fileID: 114094690541203470}
+  - component: {fileID: 54379699379479968}
+  - component: {fileID: 114018599307439306}
+  - component: {fileID: 65776349512842686}
   m_Layer: 0
   m_Name: WhiteEagle
   m_TagString: Untagged
@@ -37,13 +37,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071526909142602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.38, y: 18.218988, z: -7.491809}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.2}
+  m_LocalPosition: {x: 0.08, y: 7.27, z: -4.3}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54911046312738588
+--- !u!54 &54379699379479968
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,13 +52,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65938494085524006
+--- !u!65 &65776349512842686
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,9 +68,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.96, y: 6.5, z: 0.2}
+  m_Size: {x: 8.999999, y: 5.9999995, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114094690541203470
+--- !u!114 &114018599307439306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  anim: {fileID: 1647969289641232, guid: a6ddf9e906fdb2848b590f06597b9950, type: 2}
+  explosion: {fileID: 1989941266945676, guid: 7f087dea9b0d5f44e9c18261d14fbe99, type: 2}
 --- !u!212 &212928254220152962
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,7 +99,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
