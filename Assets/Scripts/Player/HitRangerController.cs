@@ -63,6 +63,11 @@ public class HitRangerController : MonoBehaviour {
             playerController.powerUp = null;
             score += multi * 5;
             scoreText.text = score.ToString();
+            // Clear list
+            if (hitLeft)
+                left.Clear();
+            else
+                right.Clear();
             return;
         }
 
