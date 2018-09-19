@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public int startingHP;
-    public GameObject hitRanger;    //  Indicates the range of the players strikes
-    public PowerController powerUp;      // Special attack
+    public GameObject hitRanger;        // Indicates the range of the players strikes
+    public PowerController powerUp;     // Special attack
     public GameObject endScreen;
+    public GameObject youLooseText;
 
-    private int currentHP;
+    public int currentHP;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,9 @@ public class PlayerController : MonoBehaviour {
     // Call when hp is zero or player chooses to quit the game
     public void EndGame()
     {
+        Instantiate(youLooseText);
         Instantiate(endScreen);
+        // Destroy(gameObject);
         Time.timeScale = 0;
     }
 

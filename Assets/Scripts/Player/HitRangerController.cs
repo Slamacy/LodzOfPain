@@ -9,10 +9,12 @@ public class HitRangerController : MonoBehaviour {
 
     public GameObject player;
     public GameObject text;
+    public GameObject healthBar;
 
     private PlayerController playerController;
     private TextMesh scoreText;
     private Animator anim;
+    private Animator healthAnimator;
 
     public int score = 0;
     private int multi;
@@ -26,6 +28,7 @@ public class HitRangerController : MonoBehaviour {
         // Get the player controller
         playerController = player.GetComponent<PlayerController>();
         anim = player.GetComponentInChildren<Animator>();
+        healthAnimator = healthBar.GetComponent<Animator>();
         scoreText = text.GetComponent<TextMesh>();
         score = 0;
     }
@@ -120,5 +123,6 @@ public class HitRangerController : MonoBehaviour {
         {
             right.Remove(enemy.gameObject);
         }
+        healthAnimator.SetTrigger(playerController.currentHP.ToString());
     }
 }
