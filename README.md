@@ -9,5 +9,5 @@
 - [Daniela Monteiro](https://www.facebook.com/danielafcmonteiro.29)
 - [Szymon Frączyk](https://www.facebook.com/szymon.fraczyk.9)
 
-*Play as a professor from the Universirty of Łódź and protect your newly made test results from students that want to steal them  to cheat* 
+*Play as a professor from the Universirty of Łódź and protect your newly made test results from students that want to steal them  to cheat.*<br> 
 *Kick the students away and try to get as far as you can while gaining score with the Fibonacci sequence. If you miss or get hit the sequence will reset*
