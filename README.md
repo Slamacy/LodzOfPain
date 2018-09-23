@@ -1,5 +1,5 @@
 # Lodz Of Pain
-**This game was made in approximately 4 days**
+**This game was made in approximately 6 days**
 
 ###### A project for GGULIVRR by team European:
 - [Andraž Kralj](https://github.com/Nevith)<br>
