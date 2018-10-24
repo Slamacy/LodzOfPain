@@ -3,7 +3,7 @@
 
 ###### A project for GGULIVRR by team European:
 - [Andraž Kralj](https://github.com/Nevith)<br>
-- [Oisin Murphy](https://www.facebook.com/giganticpoohead)
+- [Oisin Murphy](https://github.com/Slamacy)
 - [Laurette Royer](https://www.facebook.com/laurette.royer.58)
 - [Tuur Daneels](https://www.facebook.com/Tuur.Daneels)
 - [Daniela Monteiro](https://www.facebook.com/danielafcmonteiro.29)
